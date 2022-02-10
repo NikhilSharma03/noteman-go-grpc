@@ -7,7 +7,7 @@ import (
 )
 
 type JWTMetaData struct {
-	email string
+	Email string
 }
 
 func VerifyToken(rqToken string) (*jwt.Token, error) {
