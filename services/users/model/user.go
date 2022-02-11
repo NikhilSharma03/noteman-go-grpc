@@ -9,8 +9,8 @@ import (
 )
 
 type User struct {
-	Email    string `json:"string"`
-	Password string `json:"string"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
 }
 
 func NewUser(email, pass string) *User {
