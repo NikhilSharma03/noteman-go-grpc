@@ -2,7 +2,6 @@ package models
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/NikhilSharma03/noteman-go-grpc/services/notes/db"
 	"go.mongodb.org/mongo-driver/bson"
@@ -83,7 +82,6 @@ func (n *Notes) GetNotesByEmail(email string) error {
 		if err != nil {
 			return err
 		}
-		fmt.Println(elem)
 
 		noteData = append(noteData, elem)
 	}
