@@ -38,14 +38,14 @@ func main() {
 
 	// Get Handlers
 	getHandlers := sm.Methods(http.MethodGet).Subrouter()
-	getHandlers.HandleFunc("/api/notes", nh.GetPost)
-	getHandlers.HandleFunc("/api/notes/{email}", nh.GetPostByEmail)
+	getHandlers.HandleFunc("/api/notes", nh.GetNotes)
+	getHandlers.HandleFunc("/api/notes/{email}", nh.GetNotesByEmail)
 
 	// Post Handlers
 	postHandlers := sm.Methods(http.MethodPost).Subrouter()
 	postHandlers.HandleFunc("/api/users/login", uh.Login)
 	postHandlers.HandleFunc("/api/users/signup", uh.SignUp)
-	postHandlers.HandleFunc("/api/notes", nh.AddPost)
+	postHandlers.HandleFunc("/api/notes", nh.AddNote)
 
 	s := http.Server{
 		Addr:         ":8000",
